@@ -31,7 +31,18 @@ This tool searches the *darkweb* for information relating to the user's query an
 
 *Or*
 > <code>$ python thedevilseye --query cybersecurity --page 1</code>
+![Screenshot_20210901-165002](https://user-images.githubusercontent.com/74001397/131693875-2d30674e-bbbb-4c9d-a36e-14e2ec0d3ab9.jpg)
 
+**Help**
+> <code>$ python thedevilseye -h</code>
+
+*Or*
+> <code>$ python thedevilseye --help</code>
+![Screenshot_20210831-150757](https://user-images.githubusercontent.com/74001397/131694529-05a081b6-67fa-4772-a355-b09abcdc7a9b.jpg)
+
+
+
+*made with 🖤 by* [rly0nheart](https://about.me)
 
 
 
