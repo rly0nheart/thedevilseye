@@ -33,6 +33,8 @@
 > <code>$ python thedevilseye --query cybersecurity --page 1</code>
 ![Screenshot_20210901-165002](https://user-images.githubusercontent.com/74001397/131693875-2d30674e-bbbb-4c9d-a36e-14e2ec0d3ab9.jpg)
 
+> **Note**: If your search query contains spaces, you will have to put your query inside " " symbols.
+
 **Help**
 > <code>$ python thedevilseye -h</code>
 
