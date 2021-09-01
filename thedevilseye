@@ -4,7 +4,7 @@ import random
 import requests
 import logging
 import argparse
-from assets.colors import *
+from assets.colors import red,white,reset
 from assets.banner import banner
 from resources.headers import headers
 
