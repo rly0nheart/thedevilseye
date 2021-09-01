@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+
+import random
+
+import requests
+
+import logging
+
+import argparse
+
+from assets.colors import *
+
+from assets.banner import banner
+
+from resources.headers import headers
+
+logging.basicConfig(format=f"%(asctime)s {white}%(message)s{reset}"
+
+,datefmt=f"{white}[%I{red}:{white}%M{red}:{white}%S%p]",level=logging.DEBUG)
+
+print(banner)
+
+class TDsE:
+
+	def __init__(self,query,page):		self.base = f"https://darksearch.io/api/search?query={query}&page={int(page)}"
+
+		self.headers = {"User-Agent": f"{random.choice(headers)}"}
+
+		self.response = requests.get(self.base, headers=self.headers).json()
+
+		self.query = query
+
+		
+
+	def on_connection(self):
+
+		count=0
+
+		for result in self.response["data"]:
+
+			count+=1
+
+			print(f"""\n{white}
+
+┌─ Search query: {red}{self.query}{white}
+
+├── Total results: {red}{self.response['total']}{white}
+
+└──╼ Result number: {red}{count}{white}
+
+{result['title']}
+
+┌── Link: {red}{result['link']}{white}
+
+└──╼ Description: {red}{result['description']}{white}{reset}\n""",end=f"{white}_{reset}"*100)
+
+		
+
+if __name__=="__main__":
+
+	parser = argparse.ArgumentParser(description=f"{white}The Devil's Eye:{red} Darkweb OSINT tool developed by {white}Richard Mwewa {red}[{white}rly0nheart{red}] https://github.com/rlyonheart{reset}")
+
+	parser.add_argument("query", help="search query")
+
+	parser.add_argument("-Pg","--page",help="page number",dest="page",required=True)
+
+	args = parser.parse_args()
+
+	query = args.query
+
+	page = args.page
+
+	while True:
+
+		try:
+
+			TDsE(query,page).on_connection()
+
+			page = input(f"\n{white}Next page (page number) >> ")
+
+			
+
+		except KeyboardInterrupt:
+
+			exit()
+
+		
+
+		except Exception as e:
+
+			logging.info(f"Error: {red}{e}{reset}")
+
+			logging.info("Reconnecting...")
