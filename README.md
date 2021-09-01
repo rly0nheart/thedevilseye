@@ -8,9 +8,9 @@
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/rlyonheart/thedevilseye) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/rlyonheart/thedevilseye)
 
-Darkweb OSINT tool.
-This tool searches the *darkweb* for information relating to the user's query and returns the results including *.onion* links and their description.
-**Note**: *Tor* is not required to use this tool.
+**The Devil's Eye**
+*searches the *darkweb* for information relating to the user's query and returns the results including **.onion** links and their description.*
+> **Note**: *Tor* is not required to use this tool.
 
 # Installation
 **Clone the repo**:
