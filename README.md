@@ -23,6 +23,15 @@ This tool searches the *darkweb* for information relating to the user's query an
 # Usage
 > <code>$ python thedevilseye -q QUERY -p PAGE NUMBER (default is 1)</code>
 
+*Or*
+> <code>$ python thedevilseye --query QUERY --page PAGE NUMBER</code>
+
+**Example**:
+> <code>$ python thedevilseye -q cybersecurity -p 1</code>
+
+*Or*
+> <code>$ python thedevilseye --query cybersecurity --page 1</code>
+
 
 
 
