@@ -4,9 +4,9 @@ import random
 import requests
 import logging
 import argparse
-from assets.colors import red,white,reset
+from assets.colors import red, white, reset
 from assets.banner import banner
-from resources.headers import headers
+from resources.headers import user_agents
 
 
 logging.basicConfig(format=f"%(asctime)s {white}%(message)s{reset}"
@@ -16,7 +16,7 @@ print(banner)
 class TDsE:
 	def __init__(self,query,page):
 		self.base = f"https://darksearch.io/api/search?query={query}&page={int(page)}"
-		self.headers = {"User-Agent": f"{random.choice(headers)}"}
+		self.headers = {"User-Agent": f"{random.choice(user_agents)}"}
 		self.response = requests.get(self.base, headers=self.headers).json()
 		self.query = query
 		
@@ -25,18 +25,18 @@ class TDsE:
 		for result in self.response["data"]:
 			count+=1
 			print(f"""\n{white}
-┌─ Search query: {red}{self.query}{white}
-├── Total results: {red}{self.response['total']}{white}
-└──╼ Result number: {red}{count}{white}
+ Search Query: {red}{self.query}{white}
+├ Total Results: {red}{self.response['total']}{white}
+└╼ Result Number: {red}{count}{white}
 
 {result['title']}
-┌── Link: {red}{result['link']}{white}
-└──╼ Description: {red}{result['description']}{white}{reset}\n""",end=f"{white}_{reset}"*100)
+├ Onion Link: {red}{result['link']}{white}
+└╼ Description: {red}{result['description']}{white}{reset}\n""",end=f"{white}_{reset}"*100)
 
 		
 if __name__=="__main__":
 	parser = argparse.ArgumentParser(description=f"{white}The Devil's Eye:{red} Darkweb OSINT tool developed by {white}Richard Mwewa {red}[{white}rly0nheart{red}] https://github.com/rlyonheart{reset}")
-	parser.add_argument("-q", "--query", help="search query", metavar="QUERY", dest="query")
+	parser.add_argument("query", help="search query")
 	parser.add_argument("-p","--page",help="page number", metavar="PAGE NUMBER", dest="page", default=1)
 	args = parser.parse_args()
 	query = args.query
