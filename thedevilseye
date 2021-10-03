@@ -4,51 +4,61 @@ import random
 import requests
 import logging
 import argparse
-from assets.colors import red, white, reset
+from assets.colors import red, white, green, reset
 from assets.banner import banner
 from resources.headers import user_agents
 
 
-logging.basicConfig(format=f"%(asctime)s {white}%(message)s{reset}"
-,datefmt=f"{white}[%I{red}:{white}%M{red}:{white}%S%p]",level=logging.DEBUG)
-
-print(banner)
 class TDsE:
-	def __init__(self,query,page):
-		self.base = f"https://darksearch.io/api/search?query={query}&page={int(page)}"
+	def __init__(self,args):
+		self.base = f"https://darksearch.io/api/search?query={args.query}&page={int(args.page)}"
 		self.headers = {"User-Agent": f"{random.choice(user_agents)}"}
 		self.response = requests.get(self.base, headers=self.headers).json()
-		self.query = query
 		
 	def on_connection(self):
 		count=0
 		for result in self.response["data"]:
 			count+=1
-			print(f"""\n{white}
- Search Query: {red}{self.query}{white}
+			results = f"""\n{white}
+{red}{args.query}{white}
 ├ Total Results: {red}{self.response['total']}{white}
 └╼ Result Number: {red}{count}{white}
 
 {result['title']}
-├ Onion Link: {red}{result['link']}{white}
-└╼ Description: {red}{result['description']}{white}{reset}\n""",end=f"{white}_{reset}"*100)
-
+├ Link: {red}{result['link']}{white}
+└╼ Description: {red}{result['description']}{white}{reset}\n"""
+			if args.outfile:
+				self.output(results)
+			print(results)
+			
+	def output(self,results):
+		with open(args.outfile, "a") as file:
+			file.write(results)
+			file.close()
+			
 		
 if __name__=="__main__":
-	parser = argparse.ArgumentParser(description=f"{white}The Devil's Eye:{red} Darkweb OSINT tool developed by {white}Richard Mwewa {red}[{white}rly0nheart{red}] https://github.com/rlyonheart{reset}")
+	parser = argparse.ArgumentParser(description=f"{white}The Devil's Eye:{red} Darkweb OSINT tool developed by {white}rly0nheart || {red}https://github.com/{white}rlyonheart{reset}")
 	parser.add_argument("query", help="search query")
 	parser.add_argument("-p","--page",help="page number", metavar="PAGE NUMBER", dest="page", default=1)
+	parser.add_argument("-o", "--outfile", help="output filename", metavar="FILENAME", dest="outfile")
+	parser.add_argument("-v", "--verbose", help="verbosity", dest="verbose", action="store_true")
 	args = parser.parse_args()
-	query = args.query
-	page = args.page
+	if args.verbose:
+		print(banner)
 	while True:
 		try:
-			TDsE(query,page).on_connection()
-			page = input(f"\n{white}Next page (page number) >> ")
+			if args.verbose:
+				logging.basicConfig(format=f"{white}%(message)s{reset}",level=logging.DEBUG)
+			TDsE(args).on_connection()
+			page = input(f"\n{white}Next page ({green}page number{white}) -->>  ")
 			
 		except KeyboardInterrupt:
+			if args.verbose:
+				exit(f"{white}* Process interrupted ({red}Ctrl{white}+{red}C{white}).{reset}")
 			exit()
 		
 		except Exception as e:
-			logging.info(f"Error: {red}{e}{reset}")
-			logging.info("Reconnecting...")
+			if args.verbose:
+				print(f"{white}* Error: {red}{e}{reset}")
+				print("{white}* Reconnecting ({green}{args.query}{white})...{reset}")
