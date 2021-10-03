@@ -20,29 +20,16 @@
 
 > <code>$ pip install -r requirements.txt</code>
 
-# Usage
-> <code>$ python thedevilseye -q QUERY -p PAGE NUMBER (default is 1)</code>
 
-*Or*
-> <code>$ python thedevilseye --query QUERY --page PAGE NUMBER</code>
+# Optional Args
+| Flag           | Or            |MetaVar|                 Usage|
+| ------------- |:-------------:|:----------------------:|:---------:|
+| <code>-o</code>      | <code>--outfile</code>      |   **FILENAME** |  *Output filename*  |
+| <code>-p</code> | <code>--page</code>  |  **PAGE NUMBER**  |  *Page number*  |
+| <code>-v</code> | <code>--verbosity</code>  |    |  *run program in verbose mode*  |
 
-**Example**:
-> <code>$ python thedevilseye -q cybersecurity -p 1</code>
-
-*Or*
-> <code>$ python thedevilseye --query cybersecurity --page 1</code>
-![Screenshot_20210901-165002](https://user-images.githubusercontent.com/74001397/131693875-2d30674e-bbbb-4c9d-a36e-14e2ec0d3ab9.jpg)
 
 > **Note**: If your search query contains spaces, you will have to put your query inside " " symbols.
-
-**Help**
-> <code>$ python thedevilseye -h</code>
-
-*Or*
-> <code>$ python thedevilseye --help</code>
-![Screenshot_20210831-150757](https://user-images.githubusercontent.com/74001397/131694529-05a081b6-67fa-4772-a355-b09abcdc7a9b.jpg)
-
-
 
 *made with 🖤 by* [rly0nheart](https://about.me)
 
