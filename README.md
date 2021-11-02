@@ -9,33 +9,50 @@
 
 **The Devil's Eye**
 
-*OSINT tool that searches the Darkweb for information relating to the user's query and returns the results including related .onion links and their description.*
+*Darkweb OSINT tool, that extracts information (.onion links, descriptions) from the darkweb without requiring a Tor network*
 
 > **Note**: *Tor* is not required to use this tool.
 
 # Installation & Usage
 **Clone from Github**:
-> <code>$ git clone https://github.com/rlyonheart/thedevilseye.git</code>
+```
+git clone https://github.com/rlyonheart/thedevilseye.git
+```
 
->  <code>$ cd thedevilseye</code>
+```
+cd thedevilseye
+```
 
-> <code>$ pip install -r requirements</code>
+```
+pip install -r requirements
+```
 
-> <code>$ python devilseye</code>
+```
+python devilseye QUERY
+```
 
 **Install from Pypi**:
->  <code>$ pip install thedevilseye</code>
+```
+pip install thedevilseye
+```
 
->  <code>$ devilseye --help</code>	
+```
+devilseye QUERY
+```
+
+**Update to latest version**:
+```
+python -m pip install --upgrade thedevilseye
+```
 
 
 # Optional Arguments
 | Flag           | Or            |MetaVar|                 Usage|
 | ------------- |:-------------:|:----------------------:|:---------:|
-| <code>-o</code>      | <code>--outfile</code>      |   **FILENAME** |  *Output filename*  |
-| <code>-p</code> | <code>--page</code>  |  **NUMBER**  |  *Page number*  |
-| <code>-r</code> | <code>--raw</code>  |    |  *return results in raw json format*  |
-| <code>-v</code> | <code>--verbosity</code>  |    |  *run devilseye in verbose mode*  |
+| <code>-o</code>      | <code>--outfile</code>      |   **FILENAME** |  *write output to a specified file*  |
+| <code>-p</code> | <code>--page</code>  |  **NUMBER**  |  *page number. default is 1*  |
+| <code>-r</code> | <code>--raw</code>  |    |  *return output in raw json format*  |
+| <code>-v</code> | <code>--verbosity</code>  |    |  *run thedevilseye in verbose mode*  |
 
 
 > **Note**: If your search query contains spaces, put it inside " " symbols.
