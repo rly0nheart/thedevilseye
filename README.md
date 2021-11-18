@@ -28,7 +28,7 @@ pip install -r requirements
 ```
 
 ```
-python devilseye QUERY
+python devilseye [QUERY]
 ```
 
 **Install from Pypi**:
@@ -37,7 +37,7 @@ pip install thedevilseye
 ```
 
 ```
-devilseye QUERY
+devilseye [QUERY]
 ```
 
 **Upgrade to latest version**:
@@ -47,12 +47,12 @@ python -m pip install --upgrade thedevilseye
 
 
 # Optional Arguments
-| Flag           | Or            |MetaVar|                 Usage|
-| ------------- |:-------------:|:----------------------:|:---------:|
-| <code>-o</code>      | <code>--output</code>      |   **[FILENAME]** |  *write output to a specified file*  |
-| <code>-p</code> | <code>--page</code>  |  **[NUMBER]**  |  *page number. default is 1*  |
-| <code>-r</code> | <code>--raw</code>  |    |  *return output in raw json format*  |
-| <code>-v</code> | <code>--verbosity</code>  |    |  *run thedevilseye in verbose mode*  |
+| Flag          |MetaVar|                 Usage|
+| ------------- |:----------------------:|:---------:|
+| <code>-o/--output</code>      |   **[FILENAME]** |  *write output to a specified file*  |
+| <code>-p/--page</code>  |  **[NUMBER]**  |  *page number. default is 1*  |
+| <code>-r/--raw</code>  |    |  *return output in raw json format*  |
+| <code>-v/--verbosity</code>  |    |  *run thedevilseye in verbose mode*  |
 
 
 > **Note**: If your search query contains spaces, put it inside " " symbols.
