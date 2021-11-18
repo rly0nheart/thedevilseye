@@ -40,7 +40,7 @@ pip install thedevilseye
 devilseye QUERY
 ```
 
-**Update to latest version**:
+**Upgrade to latest version**:
 ```
 python -m pip install --upgrade thedevilseye
 ```
@@ -49,8 +49,8 @@ python -m pip install --upgrade thedevilseye
 # Optional Arguments
 | Flag           | Or            |MetaVar|                 Usage|
 | ------------- |:-------------:|:----------------------:|:---------:|
-| <code>-o</code>      | <code>--outfile</code>      |   **FILENAME** |  *write output to a specified file*  |
-| <code>-p</code> | <code>--page</code>  |  **NUMBER**  |  *page number. default is 1*  |
+| <code>-o</code>      | <code>--output</code>      |   **[FILENAME]** |  *write output to a specified file*  |
+| <code>-p</code> | <code>--page</code>  |  **[NUMBER]**  |  *page number. default is 1*  |
 | <code>-r</code> | <code>--raw</code>  |    |  *return output in raw json format*  |
 | <code>-v</code> | <code>--verbosity</code>  |    |  *run thedevilseye in verbose mode*  |
 
