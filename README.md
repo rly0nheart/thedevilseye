@@ -13,6 +13,8 @@
 
 > **Note**: *Tor* is not required to use this tool.
 
+[![asciicast](https://asciinema.org/a/450047.svg)](https://asciinema.org/a/450047)
+
 # Installation & Usage
 **Clone from Github**:
 ```
