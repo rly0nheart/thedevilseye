@@ -11,7 +11,8 @@
 
 > **Note**: As of 23rd January 2022, thedevilseye uses [Ahmia.fi](https://ahmia.fi) resources.
 
-[![asciicast](https://asciinema.org/a/450047.svg)](https://asciinema.org/a/450047)
+![thedevilseye](https://user-images.githubusercontent.com/74001397/150698696-f905d9ed-6150-45d8-9781-e6485c3ad10b.gif)
+
 
 # Installation & Usage
 **Clone from Github**:
