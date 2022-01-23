@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from lib.colors import red,white,green,reset
 
-class thedevilsseye:
+class thedevilseye:
     def __init__(self,args):
         if args.i2p:
             self.uri = f'https://ahmia.fi/search/i2p/?q={args.query}'
