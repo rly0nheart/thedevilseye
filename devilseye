@@ -1,30 +1,26 @@
 #!/usr/bin/env python3
 
-import os
-import sys
-import logging
+from src.main import *
 from datetime import datetime
-sys.path.append(os.getcwd()+"/.lib/")
-sys.path.append(os.getcwd()+"/.src/")
-from colors import red, white, green, reset
-from _main_ import thedevilseye,args,start
+from lib.colors import red,white,green,reset
 
-
-if __name__=="__main__":
-	if args.verbose:
-		logging.basicConfig(format=f"{white}[{green}*{white}] %(message)s{reset}",level=logging.DEBUG)
-		
-	# Main loop
-	while True:
-		try:
-			thedevilseye(args).on_connection()
-			
-		except KeyboardInterrupt:
-			if args.verbose:
-				print(f"\n{white}[{red}x{white}] Interrupted with {red}Ctrl{white}+{red}C{reset}")
-				exit(f"{white}[{green}-{white}] Stopped in {green}{datetime.now()-start}{white} seconds.{reset}")	
-			break
-		
-		except Exception as e:
-			if args.verbose:
-				print(f"{white}[{red}!{white}] Error: {red}{e}{reset}")
+if __name__ == '__main__':
+    while True:
+        try:
+        	thedevilseye(args).search()
+        	break
+        	
+        except KeyboardInterrupt:
+        	if args.verbose:
+        		print(f'\n{white}[{red}x{white}] Process interrupted with {red}Ctrl{white}+{red}C{reset}')
+        		break
+        	break
+        	
+        except Exception as e:
+            if args.verbose:
+            	print(f'{white}[{red}!{white}] An error occured: {red}{e}{reset}')
+            
+            
+    if args.verbose:
+    	exit(f'{white}[{green}-{white}] Finished in {green}{datetime.now()-start_time}{white} seconds.{reset}')
+    exit()
