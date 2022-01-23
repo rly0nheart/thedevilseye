@@ -1,11 +1,9 @@
-# As of 23rd January 2022, thedevilseye uses Ahmia.fi resources
-
 import logging
 import requests
 import argparse
 from bs4 import BeautifulSoup
 from datetime import datetime
-from lib.colors import red,white,green,yellow,reset
+from lib.colors import red,white,green,reset
 
 class thedevilsseye:
     def __init__(self,args):
@@ -13,7 +11,8 @@ class thedevilsseye:
             self.uri = f'https://ahmia.fi/search/i2p/?q={args.query}'
         else:
         	self.uri = f'https://ahmia.fi/search/?q={args.query}'
-        
+		
+    # searching on ahmia    
     def search(self):
         request = requests.get(self.uri)
         soup = BeautifulSoup(request.text, 'html.parser')
@@ -29,7 +28,7 @@ class thedevilsseye:
         if args.dump:
             self.dump(soup)
             
-    
+    # dumping output to a specified file
     def dump(self,soup):
         with open(args.dump, 'w') as file:
             file.write(soup.ol.get_text())
