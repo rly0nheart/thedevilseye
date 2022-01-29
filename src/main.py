@@ -1,18 +1,20 @@
+# As of 23rd January 2022, thedevilseye uses Ahmia.fi resources
+# The current (2022) edition of thedevilseye is called Hellfire
+
 import logging
 import requests
 import argparse
 from bs4 import BeautifulSoup
 from datetime import datetime
-from lib.colors import red,white,green,reset
+from lib.colors import red,white,green,yellow,reset
 
 class thedevilseye:
-    def __init__(self,args):
+    def __init__(self,args,start_time):
         if args.i2p:
             self.uri = f'https://ahmia.fi/search/i2p/?q={args.query}'
         else:
         	self.uri = f'https://ahmia.fi/search/?q={args.query}'
-		
-    # searching on ahmia    
+            
     def search(self):
         request = requests.get(self.uri)
         soup = BeautifulSoup(request.text, 'html.parser')
@@ -22,13 +24,13 @@ class thedevilseye:
             	exit(f'{white}[{red}-{white}] No results found for {args.query}. Try a different search.{reset}')
         else:
             if args.verbose:
-            	print(f'\n{white}[{green}={white}] Search results for {args.query}:{reset}')
+            	print(f'\n\t{white}{args.query} — thedevilseye | ',start_time.strftime('%A %d %Y, %I:%M:%S%p'),reset)
             print(soup.ol.get_text())
         	
         if args.dump:
             self.dump(soup)
             
-    # dumping output to a specified file
+    
     def dump(self,soup):
         with open(args.dump, 'w') as file:
             file.write(soup.ol.get_text())
