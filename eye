@@ -7,7 +7,7 @@ from lib.colors import red,white,green,reset
 if __name__ == '__main__':
     while True:
         try:
-        	thedevilseye(args).search()
+        	thedevilseye(args,start_time).search()
         	break
         	
         except KeyboardInterrupt:
