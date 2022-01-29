@@ -18,7 +18,7 @@ if __name__ == '__main__':
         	
         except Exception as e:
             if args.verbose:
-            	print(f'{white}[{red}!{white}] An error occured: {red}{e}{reset}')
+            	print(f'{white}[{red}!{white}] Error: {red}{e}{reset}')
             
             
     if args.verbose:
