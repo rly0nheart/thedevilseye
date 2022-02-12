@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 from src.main import *
+from lib.banner import banner
 from datetime import datetime
 from lib.colors import red,white,green,reset
 
+print(banner)
 if __name__ == '__main__':
     while True:
         try:
