@@ -6,7 +6,7 @@ import requests
 import argparse
 from bs4 import BeautifulSoup
 from datetime import datetime
-from lib.colors import red,white,green,yellow,reset
+from lib.colors import red,white,green,reset
 
 class thedevilseye:
     def __init__(self,args,start_time):
@@ -44,7 +44,7 @@ parser = argparse.ArgumentParser(description=f'{white}Darkweb OSINT tool{reset}'
 parser.add_argument('query', help=f'{white}search query{reset}')
 parser.add_argument('-i','--i2p', help=f'{white}switch to i2p network search{reset}', action='store_true')
 parser.add_argument('-d','--dump', metavar=f'{white}path/to/file{reset}', help=f'{white}dump output to a file{reset}')
-parser.add_argument('--version',version=f'{white}2022.1.1.0-hellfire Released on 29rd January 2022{reset}',action='version')
+parser.add_argument('--version',version=f'{white}2022.1.2.0-hellfire Released on 12th February 2022{reset}',action='version')
 parser.add_argument('-v','--verbose',help=f'{white}enable verbosity{reset}',action='store_true')
 args = parser.parse_args()
 if args.verbose:
