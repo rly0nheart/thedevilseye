@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from src.main import *
+from lib.banner import banner
 from datetime import datetime
 from lib.colors import red,white,green,reset
 
