@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from src.main import *
-from lib.banner import banner
 from datetime import datetime
 from lib.colors import red,white,green,reset
 
@@ -14,15 +13,15 @@ if __name__ == '__main__':
         	
         except KeyboardInterrupt:
         	if args.verbose:
-        		print(f'\n{white}[{red}x{white}] Process interrupted with {red}Ctrl{white}+{red}C{reset}')
+        		logging.info(f'{white}Process interrupted with {red}Ctrl{white}+{red}C{reset}')
         		break
         	break
         	
         except Exception as e:
             if args.verbose:
-            	print(f'{white}[{red}!{white}] Error: {red}{e}{reset}')
+            	logging.error(f'{white}An error occured: {red}{e}{reset}')
             
             
     if args.verbose:
-    	exit(f'{white}[{green}-{white}] Finished in {green}{datetime.now()-start_time}{white} seconds.{reset}')
+    	logging.info(f'{white}Finished in {green}{datetime.now()-start_time}{white} seconds.{reset}')
     exit()
