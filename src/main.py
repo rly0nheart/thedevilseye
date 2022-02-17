@@ -52,7 +52,7 @@ class thedevilseye:
         if args.verbose:
         	logging.info(f'{white}Output dumped to {green}{args.dump}{reset}')
         	
-     # Reading LICENSE file  		
+     # Reading the LICENSE file  		
     def licence(self):
         with open('LICENSE', 'r') as file:
         	content = file.read()
