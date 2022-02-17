@@ -8,8 +8,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rly0nheart/thedevilseye?style=flat&logo=github)
 
 > *THEDEVILSEYE extracts information (.onion links, descriptions) from the darkweb without requiring a Tor network*
+![thedevilseye](https://user-images.githubusercontent.com/74001397/154586969-6c1b8af2-8ea5-4000-b7ed-84f4ad7ac971.gif)
 
-[![asciicast](https://asciinema.org/a/463778.svg)](https://asciinema.org/a/463778)
 
 # Installation & Usage
 **Clone from Github**:
@@ -40,6 +40,10 @@ $ eye search-query
 
 **Upgrade to latest version**:
 ```
+$ python eye --update
+```
+
+```
 $ pip install --upgrade thedevilseye
 ```
 
@@ -47,12 +51,14 @@ $ pip install --upgrade thedevilseye
 # Optional Arguments
 | Flag          |MetaVar|                 Usage|
 | ------------- |:----------------------:|:---------:|
-| <code>-q/--query</code>      |   search query |  *search query*|
+| <code>-q/--query</code>      |    search query |  *return results related to the search query*|
 | <code>-i/--i2p</code>  |    |  *switch to i2p network search*  |
+| <code>--jailbait</code>  |    |  *Ahmia.fi self-help program;  The self-help program is primarily intended for people who are worried about their interest, thoughts, feelings or actions concerning children.* [Learn more](https://ahmia.fi/legal)  |
 | <code>-d/--dump</code>      |   path/to/file |  *dump output to a file*|
 | <code>-v/--verbose</code>  |    |  *enable verbosity*  |
-| <code>--license/--licence</code>      |   |  *view program's licen(sc)e and exit*|
-| <code>--version</code>  |    |  *view program's version number and exit*  |
+| <code>-u/--update</code>  |    |  *update thedevilseye to the newest version*  |
+| <code>--release-tag</code>  |    |  *show program's release tag and exit*  |
+| <code>--licence/--license</code>      |   |  *show program's licen[sc]e and exit*|
 
 # LICENSE
 ![license](https://user-images.githubusercontent.com/74001397/137917929-2f2cdb0c-4d1d-4e4b-9f0d-e01589e027b5.png)
