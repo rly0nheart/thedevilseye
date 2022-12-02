@@ -2,7 +2,6 @@
 ![Python Version](https://img.shields.io/badge/python-3.x-blue?style=flat&logo=python)
 ![OS](https://img.shields.io/badge/OS-GNU%2FLinux-red?style=flat&logo=linux)
 ![GitHub](https://img.shields.io/github/license/rly0nheart/thedevilseye?style=flat&logo=github)
-![CodeFactor](https://www.codefactor.io/repository/github/rly0nheart/thedevilseye/badge)
 ![PyPI](https://img.shields.io/pypi/v/thedevilseye?style=flat&logo=pypi)
 [![Downloads](https://static.pepy.tech/personalized-badge/thedevilseye?period=total&units=international_system&left_color=black&right_color=orange&left_text=pypi+downloads&logo=pypi)](https://pepy.tech/project/thedevilseye)
 ![GitHub repo size](https://img.shields.io/github/repo-size/rly0nheart/thedevilseye?style=flat&logo=github)
