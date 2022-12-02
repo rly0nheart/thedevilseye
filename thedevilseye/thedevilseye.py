@@ -4,7 +4,6 @@ from rich.tree import Tree
 from datetime import datetime
 from selenium import webdriver
 from rich import print as xprint
-from thedevilseye.banner import banner
 from selenium.webdriver.common.by import By
  
  
