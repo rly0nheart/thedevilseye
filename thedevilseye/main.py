@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from thedevilseye.thedevilseye *
+from thedevilseye.thedevilseye import *
 
 
 def create_parser():
