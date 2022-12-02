@@ -15,10 +15,10 @@ def main():
 
     start_time = datetime.now()
     xprint(banner)
-    xprint(f"\n[[green]+[/]] initialized: <time_dt={start_time}, engine=[green]{args.engine}[/], query=[green]{args.query}[/]>")
+    xprint(f"\n[[green]STARTED[/]] initialized: <time_dt={start_time}, engine=[green]{args.engine}[/], query=[green]{args.query}[/]>")
 
     if args.query == None:
-        exit('[[red]![/]] Search query not specified (-q/--query).')
+        exit('[[red]NEGATIVE[/]] Search query not specified (-q/--query).')
     if args.engine == 'ahmia.fi':
         devils_eye.search_ahmia_fi(query=args.query)
     elif args.engine == 'tor.link':
@@ -26,4 +26,4 @@ def main():
     else:
       exit('thedevilseye: use -h/--help to show usage.')
 
-    xprint(f"[[green]-[/]] Complete: <time_sec={datetime.now() - start_time}>")
+    xprint(f"[[green]COMPLETE[/]] Complete: <time_sec={datetime.now() - start_time}>")
