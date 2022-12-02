@@ -8,7 +8,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rly0nheart/thedevilseye?style=flat&logo=github)
 
 > *THEDEVILSEYE extracts information (.onion links, descriptions) from the darkweb without requiring a Tor network*
-![thedevilseye](https://user-images.githubusercontent.com/74001397/154586969-6c1b8af2-8ea5-4000-b7ed-84f4ad7ac971.gif)
+![Screenshot_20221202_220155](https://user-images.githubusercontent.com/74001397/205376923-0be9e393-19e3-4192-93fe-574a7444d459.png)
 
 
 # Installation & Usage
@@ -36,6 +36,7 @@ $ pip install thedevilseye
 
 ```
 $ eye search-query
+
 ```
 
 **Upgrade to latest version**:
