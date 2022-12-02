@@ -15,10 +15,8 @@ def main():
     # Parse command-line arguments
     parser = create_parser()
     args = parser.parse_args()
-
     start_time = datetime.now()
     xprint("[[red]THEDEVILSEYE[/]] v2022.1.5.0-[red]hellfire#6[/]")
-)
     xprint(f"\n[[green]STARTED[/]] initialized: <time_dt={start_time}, engine=[green]{args.engine}[/], query=[green]{args.query}[/]>")
     try:
         devils_eye.search_ahmia_fi(query=args.query)
