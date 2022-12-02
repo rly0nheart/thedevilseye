@@ -8,13 +8,6 @@ from thedevilseye.banner import banner
 from selenium.webdriver.common.by import By
  
  
-def create_parser():
-    parser = argparse.ArgumentParser(description="Darkweb .onion link(s) extracting tool  — by Richard Mwewa | https://about.me/rly0nheart",epilog="thedevilseye scrapes darkweb search engines and gets information (.onion links, descriptions) requiring a Tor network. Developed by Richard Mwewa | https://about.me/rly0nheart")
-    parser.add_argument('query', help='search quey')
-    parser.add_argument("-d","--dump", metavar="path/to/file", help=argparse.SUPPRESS)
-    return parser
- 
- 
 class TheDevilsEye:
  
     def __init__(self):
