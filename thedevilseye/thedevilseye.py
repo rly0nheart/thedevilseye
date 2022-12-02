@@ -1,8 +1,10 @@
 import time
 import argparse
 from rich.tree import Tree
+from datetime import datetime
 from selenium import webdriver
 from rich import print as xprint
+from thedevilseye.banner import banner
 from selenium.webdriver.common.by import By
  
  
@@ -29,7 +31,7 @@ class TheDevilsEye:
             xprint(f'[[red]ERROR[/]] An error occurred: [red]{e}[/]')
             return []
  
-        xprint(f'[[green]POSITIVE[/]] Found [green]{len(results)}[/] results')
+        xprint(f'[[green]FOUND[/]] Found [green]{len(results)}[/] results')
         return results
  
     def search_ahmia_fi(self, query):
@@ -41,6 +43,6 @@ class TheDevilsEye:
             result_tree.add('Onion Link: ' + result.find_element(By.TAG_NAME,'cite').text)
             result_tree.add('Last seen: ' + result.find_element(By.TAG_NAME,'span').text)
             xprint(result_tree)
-            print('-' * 74)
+            xprint('=' * 74)
  
         self.driver.close()
