@@ -6,7 +6,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rly0nheart/thedevilseye?style=flat&logo=github)
 
 > *THEDEVILSEYE extracts information (.onion links, descriptions) from the darkweb without requiring a Tor network*
-![Screenshot_20221202_223646](https://user-images.githubusercontent.com/74001397/205381500-2b1e8ac8-6a6d-4d6b-b24d-d78dd680111f.png)
+![Screenshot_20221202_231107](https://user-images.githubusercontent.com/74001397/205387073-ee601bce-6c95-493c-b999-ec2dc3a36fce.png)
 
 
 # Installation
