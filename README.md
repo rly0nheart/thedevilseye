@@ -1,5 +1,5 @@
 
-An osint tool that uses Ahmia.fi to get hidden services and descriptions that match with the users query.
+An osint tool that uses Ahmia.fi to get Tor hidden services and descriptions that match with the users query.
 
 ![Python Version](https://img.shields.io/badge/python-3.x-blue?style=flat&logo=python)
 ![GitHub](https://img.shields.io/github/license/rly0nheart/thedevilseye?style=flat&logo=github)
