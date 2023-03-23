@@ -6,9 +6,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rly0nheart/thedevilseye?style=flat&logo=github)
 [![Upload Python Package](https://github.com/rly0nheart/thedevilseye/actions/workflows/python-publish.yml/badge.svg)](https://github.com/rly0nheart/thedevilseye/actions/workflows/python-publish.yml)
 
-> *THEDEVILSEYE extracts information (.onion links, descriptions) from the darkweb without requiring a Tor network*
 ![Screenshot_20221202_231107](https://user-images.githubusercontent.com/74001397/205387073-ee601bce-6c95-493c-b999-ec2dc3a36fce.png)
-
+**Find information (.onion links, descriptions) from the darkweb without requiring a Tor network**
 
 # Installation
 ## Github
@@ -32,3 +31,6 @@ thedevilseye <query>
 
 # About author
 * [About.me](https://about.me/rly0nheart)
+
+# Credits
+This tool scrapes [Ahmia.fi](https://ahmia.fi) to get hidden services
