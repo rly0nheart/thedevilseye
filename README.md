@@ -1,4 +1,6 @@
 
+An osint tool that uses Ahmia.fi to get hidden services and descriptions that match with the users query.
+
 ![Python Version](https://img.shields.io/badge/python-3.x-blue?style=flat&logo=python)
 ![GitHub](https://img.shields.io/github/license/rly0nheart/thedevilseye?style=flat&logo=github)
 ![PyPI](https://img.shields.io/pypi/v/thedevilseye?style=flat&logo=pypi)
@@ -7,7 +9,7 @@
 [![Upload Python Package](https://github.com/rly0nheart/thedevilseye/actions/workflows/python-publish.yml/badge.svg)](https://github.com/rly0nheart/thedevilseye/actions/workflows/python-publish.yml)
 
 ![Screenshot_20221202_231107](https://user-images.githubusercontent.com/74001397/205387073-ee601bce-6c95-493c-b999-ec2dc3a36fce.png)
-**Find information (.onion links, descriptions) from the darkweb without requiring a Tor network**
+
 
 # Installation
 ## Github
@@ -31,6 +33,3 @@ thedevilseye <query>
 
 # About author
 * [About.me](https://about.me/rly0nheart)
-
-# Credits
-This tool scrapes [Ahmia.fi](https://ahmia.fi) to get hidden services
