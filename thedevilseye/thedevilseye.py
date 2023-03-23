@@ -5,6 +5,7 @@ from datetime import datetime
 from selenium import webdriver
 from rich import print as xprint
 from selenium.webdriver.common.by import By
+from thedevilseye.config import RED. GREEN. RESET
  
  
 class TheDevilsEye:
@@ -20,17 +21,17 @@ class TheDevilsEye:
         try:
             results = self.driver.find_elements(By.CLASS_NAME, class_name)
         except Exception as e:
-            xprint(f'[[red]ERROR[/]] An error occurred: [red]{e}[/]')
+            xprint(f"[{RED}x{RESET}] An error occurred: {RED}{e}{RESET}")
             return []
  
-        xprint(f'[[green]FOUND[/]] Found [green]{len(results)}[/] results')
+        xprint(f"[{GREEN}+{RESET}] Found {len(results)} results")
         return results
  
     def search_ahmia_fi(self, query):
         url = f"https://ahmia.fi/search/?q={query}"
         results = self.webdriver_get(url, 'result')
         for count, result in enumerate(results, start=1):
-            result_tree = Tree(f'\n[green]{count}[/]/[green]{len(results)}[/] - {query}')
+            result_tree = Tree(f'\n{count}/{len(results)} - {query}')
             result_tree.add('Description: ' + result.find_element(By.TAG_NAME, 'p').text)
             result_tree.add('Onion Link: ' + result.find_element(By.TAG_NAME,'cite').text)
             result_tree.add('Last seen: ' + result.find_element(By.TAG_NAME,'span').text)
