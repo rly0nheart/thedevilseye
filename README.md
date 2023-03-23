@@ -30,6 +30,3 @@ thedevilseye <query>
 
 # LICENSE
 ![license](https://user-images.githubusercontent.com/74001397/137917929-2f2cdb0c-4d1d-4e4b-9f0d-e01589e027b5.png)
-
-# About author
-* [About.me](https://about.me/rly0nheart)
