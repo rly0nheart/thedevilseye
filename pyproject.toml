@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thedevilseye"
+version = "1.5.2"
+description = "A darkweb osint tool that uses Ahmia.fi"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["osint", "tor", "darknet", "deepweb", "darkweb", "darkweb-data", "osint-python", "osint-tool", "deepweb-links"]
+authors = [{name = "Richard Mwewa", email = "rly0nheart@duck.com"}]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
+  "Natural Language :: English"
+]
+
+dependencies = [
+    "rich",
+    "selenium"
+]
+
+[project.urls]
+homepage = "https://github.com/rly0nheart/thedevilseye"
+documentation = "https://github.com/rly0nheart/thedevilseye/blob/master/README.md"
+repository = "https://github.com/rly0nheart/thedevilseye.git"
+
+[project.scripts]
+thedevilseye = "thedevilseye.main:main"
