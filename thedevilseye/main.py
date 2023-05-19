@@ -1,29 +1,22 @@
-#!/usr/bin/env python3
-
 import os
+import time
 from thedevilseye.thedevilseye import *
 
-
-def create_parser():
-    parser = argparse.ArgumentParser(description="Get tor hidden services and descriptions that match with the users query  — by Richard Mwewa | https://about.me/rly0nheart",epilog="thedevilseye is an osint tool that uses Ahmia.fi to get Tor hidden services and descriptions that match with the users query.")
-    parser.add_argument('query', help='search quey')
-    parser.add_argument("-d","--dump", metavar="path/to/file", help=argparse.SUPPRESS)
-    return parser
+parser = create_parser()
+arguments = parser.parse_args()
 
 
-def main():
-    devils_eye = TheDevilsEye() 
-    # Parse command-line arguments
-    parser = create_parser()
-    args = parser.parse_args()
-    start_time = datetime.now()
-    
+def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
-    xprint(f"{RED}THEDEVILSEYE{RESET} 1.5.2-{RED}hellfire#7{RESET}")
-    xprint(f"\n[{GREEN}*{RESET}] initialized <time_dt={start_time}, query='{args.query}'> ...")
-    try:
-        devils_eye.search_ahmia_fi(query=args.query)
-    except Exception as e:
-        xprint(f"[{RED}x{RESET}] An error occurred: {RED}{e}{RESET}")
 
-    xprint(f"[{GREEN}-{RESET}] Complete <time_sec={datetime.now() - start_time}>")
+
+def thedevilseye():
+    xprint(f"{COLOURS['RED']}THEDEVILSEYE{COLOURS['RESET']} 1.6.0-{COLOURS['RED']}hellfire#8{COLOURS['RESET']}")
+    xprint(f"{COLOURS['GREEN']}[*]{COLOURS['RESET']} initialized <time_dt={time.asctime()}, query='{arguments.query}'> ...")
+    try:
+        get_hidden_services(query=arguments.query, result_count=arguments.count)
+    except KeyboardInterrupt:
+        xprint(f"{COLOURS['YELLOW']}[!]{COLOURS['RESET']} User interruption detected.")
+
+    except Exception as e:
+        xprint(f"{COLOURS['RED']}[x]{COLOURS['RESET']} An error occurred: {COLOURS['RED']}{e}{COLOURS['RESET']}")
