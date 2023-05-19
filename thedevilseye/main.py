@@ -11,7 +11,7 @@ def clear_screen():
 
 
 def thedevilseye():
-    xprint(f"{COLOURS['RED']}THEDEVILSEYE{COLOURS['RESET']} 1.6.0-{COLOURS['RED']}hellfire#8{COLOURS['RESET']}")
+    xprint(f"{COLOURS['RED']}THEDEVILSEYE{COLOURS['RESET']} 1.6.0-{COLOURS['RED']}hellfire#7{COLOURS['RESET']}")
     xprint(f"{COLOURS['GREEN']}[*]{COLOURS['RESET']} initialized <time_dt={time.asctime()}, query='{arguments.query}'> ...")
     try:
         get_hidden_services(query=arguments.query, result_count=arguments.count)
