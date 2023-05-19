@@ -1,41 +1,41 @@
-import time
-import argparse
-from rich.tree import Tree
-from datetime import datetime
-from selenium import webdriver
+import requests
+from bs4 import BeautifulSoup
 from rich import print as xprint
-from selenium.webdriver.common.by import By
-from thedevilseye.config import RED. GREEN. RESET
- 
- 
-class TheDevilsEye:
- 
-    def __init__(self):
-        options = webdriver.FirefoxOptions()
-        options.add_argument("--headless")
-        self.driver = webdriver.Firefox(options=options)
- 
-    def webdriver_get(self, url, class_name, wait_time=5):
-        self.driver.get(url)
-        time.sleep(wait_time)
-        try:
-            results = self.driver.find_elements(By.CLASS_NAME, class_name)
-        except Exception as e:
-            xprint(f"[{RED}x{RESET}] An error occurred: {RED}{e}{RESET}")
-            return []
- 
-        xprint(f"[{GREEN}+{RESET}] Found {len(results)} results")
-        return results
- 
-    def search_ahmia_fi(self, query):
-        url = f"https://ahmia.fi/search/?q={query}"
-        results = self.webdriver_get(url, 'result')
-        for count, result in enumerate(results, start=1):
-            result_tree = Tree(f'\n{count}/{len(results)} - {query}')
-            result_tree.add('Description: ' + result.find_element(By.TAG_NAME, 'p').text)
-            result_tree.add('Onion Link: ' + result.find_element(By.TAG_NAME,'cite').text)
-            result_tree.add('Last seen: ' + result.find_element(By.TAG_NAME,'span').text)
-            xprint(result_tree)
-            xprint('=' * 74)
- 
-        self.driver.close()
+from thedevilseye.config import COLOURS
+from thedevilseye.config import create_results_table, create_parser
+
+
+def __get_page_resource(url: str):
+    """
+    Get the resource html of https://ahmia.fi
+    :param url: ahmia.fi url (https://ahmia.fi/search/?q=some_query_here)
+    :return: html string of the page
+    """
+    response = requests.get(url)
+    html_content = BeautifulSoup(response.content, "html.parser")
+    return html_content
+
+
+def get_hidden_services(query: str, result_count: int):
+    """
+    Get search results from Ahmia.fi
+    :param query: query string
+    :param result_count: number of results to return
+    :return: None
+    """
+    response_content = __get_page_resource(f"https://ahmia.fi/search/?q={query}")
+    results = response_content.find_all('li', {'class': 'result'})
+    results_table = create_results_table()
+    for index, result in enumerate(results, start=1):
+        url = result.find('cite').text
+        title = result.find('h4').text
+        description = result.find('p').text
+        results_table.add_row(str(index),
+                              title,
+                              COLOURS['RED'] + url + COLOURS['RESET'],
+                              COLOURS['GREEN'] + description + COLOURS['RESET'])
+
+        if index == result_count:
+            break
+
+    xprint(results_table)
