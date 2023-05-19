@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "thedevilseye"
-version = "1.5.2"
-description = "A darkweb osint tool that uses Ahmia.fi"
+version = "1.6.0"
+description = "Get Tor hidden services and descriptions that match with the user's query."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
@@ -22,7 +22,8 @@ classifiers = [
 
 dependencies = [
     "rich",
-    "selenium"
+    "requests",
+    "beautifulsoup4"
 ]
 
 [project.urls]
@@ -31,4 +32,4 @@ documentation = "https://github.com/rly0nheart/thedevilseye/blob/master/README.m
 repository = "https://github.com/rly0nheart/thedevilseye.git"
 
 [project.scripts]
-thedevilseye = "thedevilseye.main:main"
+thedevilseye = "thedevilseye.main:thedevilseye"
