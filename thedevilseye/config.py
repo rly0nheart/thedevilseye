@@ -5,7 +5,7 @@ from rich.markdown import Markdown
 from rich.logging import RichHandler
 
 
-current_version = "1.6.0"  # current program version
+current_version = "1.6.1"  # current program version
 # rich library colours
 COLOURS = {
     "RED": "[red]",
