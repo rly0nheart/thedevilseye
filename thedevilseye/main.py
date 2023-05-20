@@ -8,8 +8,6 @@ def clear_screen():
 
 
 def thedevilseye():
-    if arguments.debug:
-        
     xprint(f"{COLOURS['RED']}THEDEVILSEYE{COLOURS['RESET']} {current_version}-{COLOURS['RED']}hellfire#7{COLOURS['RESET']}")
     xprint(f"{COLOURS['GREEN']}[*]{COLOURS['RESET']} initialized <time_dt={time.asctime()}, query='{arguments.query}'> ...")
     try:
