@@ -2,7 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from rich import print as xprint
 from thedevilseye.config import COLOURS
-from thedevilseye.config import create_results_table, create_parser
+from thedevilseye.config import Markdown, current_version, create_results_table, create_parser
+
 
 
 def __get_page_resource(url: str):
@@ -14,6 +15,18 @@ def __get_page_resource(url: str):
     response = requests.get(url)
     html_content = BeautifulSoup(response.content, "html.parser")
     return html_content
+
+
+# Check program updates
+def check_updates():
+    response = requests.get("https://api.github.com/repos/rly0nheart/thedevilseye/releases/latest").json()
+    if response['tag_name'] == current_version:
+        pass
+    else:
+        raw_release_notes = response['body']
+        markdown_release_notes = Markdown(raw_release_notes)
+        xprint(f"{COLOURS['GREEN']}[UPDATE]{COLOURS['RESET']} A new release of Octosuite is available ({response['tag_name']}). Run 'pip install --upgrade thedevilseye' to get the updates.\n")
+        xprint(markdown_release_notes)
 
 
 def get_hidden_services(query: str, result_count: int):
