@@ -8,10 +8,12 @@ def clear_screen():
 
 
 def thedevilseye():
-    xprint(f"{COLOURS['RED']}THEDEVILSEYE{COLOURS['RESET']} {current_version}-{COLOURS['RED']}hellfire#7{COLOURS['RESET']}")
-    xprint(f"{COLOURS['GREEN']}[*]{COLOURS['RESET']} initialized <time_dt={time.asctime()}, query='{arguments.query}'> ...")
+    clear_screen()
+    xprint(f"thedevilseye v{current_version} - {time.asctime()}\n")
+    xprint(f"{COLOURS['GREEN']}[*]{COLOURS['RESET']} initialized <query='{arguments.query}', result_count={arguments.count}> ...")
     try:
-        get_hidden_services(query=arguments.query, result_count=arguments.count)
+        check_updates()
+        get_hidden_services(query=arguments.query, result_count=int(arguments.count))
     except KeyboardInterrupt:
         xprint(f"{COLOURS['YELLOW']}[!]{COLOURS['RESET']} User interruption detected.")
 
