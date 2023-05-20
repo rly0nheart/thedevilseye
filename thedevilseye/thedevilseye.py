@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from rich import print as xprint
 from thedevilseye.config import COLOURS
-from thedevilseye.config import Markdown, current_version, create_results_table, create_parser
+from thedevilseye.config import Markdown, arguments, current_version, create_results_table, create_parser
 
 
 
