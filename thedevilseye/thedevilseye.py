@@ -44,7 +44,7 @@ def get_hidden_services(query: str, result_count: int):
         description = result.find('p').text
         results_table.add_row(str(index),
                               title,
-                              COLOURS['RED'] + url + COLOURS['RESET'],
+                              COLOURS['BLUE'] + url + COLOURS['RESET'],
                               COLOURS['GREEN'] + description + COLOURS['RESET'])
 
         if index == result_count:
