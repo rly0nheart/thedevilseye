@@ -5,7 +5,6 @@ from thedevilseye.config import COLOURS
 from thedevilseye.config import Markdown, arguments, current_version, create_results_table, create_parser
 
 
-
 def __get_page_resource(url: str):
     """
     Get the resource html of https://ahmia.fi
