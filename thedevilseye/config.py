@@ -1,6 +1,8 @@
+import logging
 import argparse
 from rich.table import Table
 from rich.markdown import Markdown
+from rich.logging import RichHandler
 
 
 current_version = "1.6.0"  # current program version
@@ -35,3 +37,12 @@ def create_parser():
     parser.add_argument('-d', '--debug', help='enable debug mode', action='store_true')
     parser.add_argument("-o", "--output", metavar="path/to/file", help=argparse.SUPPRESS)
     return parser
+
+
+_parser = create_parser()
+arguments = _parser.parse_args()
+
+if arguments.debug:
+    logging.basicConfig(level="NOTSET", format="%(message)s",
+                    handlers=[RichHandler(markup=True, log_time_format='[%I:%M:%S%p]', show_level=False)])
+    log = logging.getLogger("rich")
