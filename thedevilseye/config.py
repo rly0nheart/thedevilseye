@@ -1,6 +1,9 @@
 import argparse
 from rich.table import Table
+from rich.markdown import Markdown
 
+
+current_version = "1.6.0"  # current program version
 # rich library colours
 COLOURS = {
     "RED": "[red]",
