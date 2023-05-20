@@ -24,7 +24,7 @@ def check_updates():
     else:
         raw_release_notes = response['body']
         markdown_release_notes = Markdown(raw_release_notes)
-        xprint(f"{COLOURS['GREEN']}[UPDATE]{COLOURS['RESET']} A new release of Octosuite is available ({response['tag_name']}). Run 'pip install --upgrade thedevilseye' to get the updates.\n")
+        xprint(f"{COLOURS['GREEN']}[UPDATE]{COLOURS['RESET']} A new release of thedevilseye is available ({response['tag_name']}).\n")
         xprint(markdown_release_notes)
 
 
