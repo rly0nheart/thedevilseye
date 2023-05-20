@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "thedevilseye"
-version = "1.6.0"
+version = "1.6.1"
 description = "Get Tor hidden services and descriptions that match with the user's query."
 readme = "README.md"
 requires-python = ">=3.9"
