@@ -5,8 +5,7 @@ from rich.markdown import Markdown
 from rich.logging import RichHandler
 
 
-current_version = "1.6.1"  # current program version
-# rich library colours
+current_version = "1.6.1" 
 COLOURS = {
     "RED": "[red]",
     "GREEN": "[white]",
@@ -16,8 +15,6 @@ COLOURS = {
     "RESET": "[reset]"
 }
 
-
-# create result table
 def create_results_table():
     results_table = Table(show_header=True, header_style='bold white')
     results_table.add_column("#", style="dim")
@@ -26,8 +23,6 @@ def create_results_table():
     results_table.add_column("Description")
     return results_table
 
-
-# create argparse
 def create_parser():
     parser = argparse.ArgumentParser(description="thedevilseye — by Richard Mwewa | https://about.me/rly0nheart",
                                      epilog="thedevilseye is an osint tool that uses Ahmia.fi to get Tor hidden "
