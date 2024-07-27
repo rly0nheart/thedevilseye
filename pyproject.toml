@@ -4,32 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "thedevilseye"
-version = "1.6.1"
-description = "Get Tor hidden services and descriptions that match with the user's query."
+version = "1.7.0"
+description = "Get hidden Tor services and descriptions that match with the user's query."
 readme = "README.md"
 requires-python = ">=3.9"
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 keywords = ["osint", "tor", "darknet", "deepweb", "darkweb", "darkweb-data", "osint-python", "osint-tool", "deepweb-links"]
-authors = [{name = "Richard Mwewa", email = "rly0nheart@duck.com"}]
+authors = [{ name = "Richard Mwewa", email = "rly0nheart@duck.com" }]
 classifiers = [
-  "Development Status :: 5 - Production/Stable",
-  "Programming Language :: Python :: 3",
-  "Intended Audience :: Information Technology",
-  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-  "Operating System :: OS Independent",
-  "Natural Language :: English"
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Natural Language :: English"
 ]
 
-dependencies = [
-    "rich",
-    "requests",
-    "beautifulsoup4"
-]
+dependencies = ["beautifulsoup4", "pandas", "rich", "requests"]
 
 [project.urls]
-homepage = "https://github.com/rly0nheart/thedevilseye"
+homepage = "https://pypi.org/project/thedevilseye"
 documentation = "https://github.com/rly0nheart/thedevilseye/blob/master/README.md"
 repository = "https://github.com/rly0nheart/thedevilseye.git"
 
 [project.scripts]
-thedevilseye = "thedevilseye.main:thedevilseye"
+thedevilseye = "thedevilseye.cli:start"
