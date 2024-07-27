@@ -1,7 +1,8 @@
+# thedevilseye
 
-An osint tool that uses Ahmia.fi to get Tor hidden services and descriptions that match with the users query.
+An osint tool that uses Ahmia.fi to get hidden Tor services and descriptions that match with the users query.
 
-![2023-05-20_01-12](https://github.com/rly0nheart/thedevilseye/assets/74001397/dca2fc47-7ed2-4402-ae3b-b49cfdda6cb9)
+![Screenshot from 2024-07-27 17-16-00](https://github.com/user-attachments/assets/1b177134-0381-4bc5-8f42-3375e3cbd8d2)
 
 ![Python Version](https://img.shields.io/badge/python-3.x-blue?style=flat&logo=python)
 ![GitHub](https://img.shields.io/github/license/rly0nheart/thedevilseye?style=flat&logo=github)
@@ -10,33 +11,39 @@ An osint tool that uses Ahmia.fi to get Tor hidden services and descriptions tha
 ![GitHub repo size](https://img.shields.io/github/repo-size/rly0nheart/thedevilseye?style=flat&logo=github)
 [![Upload Python Package](https://github.com/rly0nheart/thedevilseye/actions/workflows/python-publish.yml/badge.svg)](https://github.com/rly0nheart/thedevilseye/actions/workflows/python-publish.yml)
 
-
 # Installation
+
 ## Github
+
 ```
 pip install git+https://github.com/rly0nheart/thedevilseye
 ```
+
 ## PyPI
+
 ```
 pip install thedevilseye
 ```
+
 # Usage
+
 ```
 thedevilseye --help
 ```
-```
-usage: thedevilseye [-h] [-c COUNT] [-d] query
 
-thedevilseye — by Richard Mwewa | https://about.me/rly0nheart
+```
+usage: thedevilseye [-h] [-e EXPORT] [-v] query
+
+thedevilseye — by Richard Mwewa | https://gravatar.com/rly0nheart
 
 positional arguments:
   query                 search query
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
-  -c COUNT, --count COUNT
-                        number of results to return (default 10)
-  -d, --debug           enable debug mode
+  -e EXPORT, --export EXPORT
+                        a comma-separated list of file types to export the output to (supported: csv,html,json,xml)
+  -v, --version         show program's version number and exit
 
-thedevilseye is an osint tool that uses Ahmia.fi to get Tor hidden services and descriptions that match with the user's query.
+An OSINT tool that uses Ahmia.fi to get hidden Tor services and descriptions that match with the user's query.
 ```
