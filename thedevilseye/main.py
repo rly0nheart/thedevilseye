@@ -93,7 +93,7 @@ def get_hidden_services(query: str, status: Console.status, session: requests.Se
         title = " ".join(result.find("h4").text.split())
         description = " ".join(result.find("p").text.split())
         results_list.append(
-            {"title": title, "description": description, "onion_url": url}
+            {"title": title, "description": description, "url": url}
         )
 
     return results_list
