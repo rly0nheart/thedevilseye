@@ -2,6 +2,8 @@ import argparse
 
 import pandas as pd
 from requests import Session
+from rich import box
+from rich.table import Table
 
 from .main import get_hidden_services, check_updates
 from .utils import console, export_dataframe, print_banner
@@ -42,10 +44,20 @@ def start():
             results = get_hidden_services(
                 query=args.query, status=status, session=session
             )
-
-            pd.set_option("display.max_rows", None)
             dataframe = pd.DataFrame(results)
-            console.log(dataframe)
+            # Display as rich table
+            if not dataframe.empty:
+                table = Table(show_header=True, header_style="bold magenta", box=box.ASCII, highlight=True)
+
+                for column in dataframe.columns:
+                    table.add_column(column, overflow="fold", max_width=60)
+
+                for _, row in dataframe.iterrows():
+                    table.add_row(*(str(cell) if pd.notna(cell) else "" for cell in row))
+
+                console.print(table)
+            else:
+                console.print("[bold yellow]No results found.[/]")
             if args.export:
                 export_dataframe(
                     dataframe=dataframe,
